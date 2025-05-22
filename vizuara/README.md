@@ -1,0 +1,1 @@
+This is the notes section learned from Vizuara youtube channel
