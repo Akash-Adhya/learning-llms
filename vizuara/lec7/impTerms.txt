@@ -1,0 +1,7 @@
+special context tokens -> 
+         . Special context tokens are tokens used by tokenizers or language models (like GPT, BERT, etc.) to represent non-standard or structural elements in text. They aren't part of normal human language but are inserted for special purposes like formatting, control, or model behavior guidance.
+
+<|endoftext|> token -> Used to mark the end or start of a perticular segment.
+
+Byte Pair Encoding(BPE) -> 
+         . used for dealing with the unknown words that are not present in the vocabulary
