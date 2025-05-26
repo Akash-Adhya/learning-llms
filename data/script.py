@@ -1,11 +1,11 @@
 import yfinance as yf
 import pandas as pd
 
-# List of top 10 global company tickers (can be updated based on latest market caps)
+# List of top 10 global company tickers
 top_10_tickers = [
     "AAPL",    # Apple
     "MSFT",    # Microsoft
-    "GOOGL",   # Alphabet
+    "GOOGL",   # Alphabet / Google
     "AMZN",    # Amazon
     "NVDA",    # NVIDIA
     "TSLA",    # Tesla
@@ -21,14 +21,13 @@ for ticker in top_10_tickers:
         stock = yf.Ticker(ticker)
         history = stock.history(period="max")
 
-        # Drop columns not needed
         history.drop(columns=["Dividends", "Stock Splits"], inplace=True, errors='ignore')
 
-        # Add "Tomorrow" and "Target"
+
         history["Tomorrow"] = history["Close"].shift(-1)
         history["Target"] = (history["Tomorrow"] > history["Close"]).astype(int)
 
-        # Save to CSV
+
         filename = f"{ticker.replace('-', '_')}_stock_price_data.csv"
         history.to_csv(filename)
         print(f"Saved to {filename}")
