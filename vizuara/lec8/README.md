@@ -16,7 +16,8 @@ print(importlib.metadata.version("tiktoken"))
 
 tokenizer = tiktoken.get_encoding("gpt2")
 
-text = ("Hello, do you like tea? <|endoftext|> In the Sunlit teraces." "of someUnknownPlace.")
+text = ("Hello, do you like tea? <|endoftext|> In the Sunlit teraces." "of someUnknownPlace."
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non tempus lectus. Vestibulum vestibulum et velit a ultrices. Suspendisse libero ante, ornare in sem et, dictum rhoncus nibh. Phasellus dictum ac risus non lobortis. Praesent vel nibh id purus volutpat rhoncus. Pellentesque nec purus eros. Praesent lectus enim, pretium quis.")
 
 integers = tokenizer.encode(text=text, allowed_special={"<|endoftext|>"})
 print(integers)
